@@ -11,7 +11,7 @@ export class AudioPlayer {
 
     constructor(id: string, file: string, renderer?: IRenderer) {
         this.element = document.getElementById(id);
-        this.element.innerText = "Audio player.";
+        this.element.innerText = "";
         this.player = new Audio(file);
 
         this.renderer = renderer;
@@ -20,16 +20,29 @@ export class AudioPlayer {
     public setRenderer(renderer: IRenderer) {
         if(renderer == this.renderer)
             return;
-        
+        if(!this.renderer) {
+            this.renderer = renderer;
+            return;
+        }
         this.renderer.dispose();
         this.renderer = renderer;
     }
 
     public play() {
         this.player.play();
+        let animation = (ms) => {
+            console.log('Animation!', this.renderer);
+            if(!this.renderer)
+                return;
+            this.renderer.render(ms);
+            this.renderer.animationFrameReference = requestAnimationFrame(animation);
+        };
+
+        requestAnimationFrame(animation);
     }
 
     public pause() {
         this.player.pause();
+        cancelAnimationFrame(this.renderer.animationFrameReference);
     }
 }

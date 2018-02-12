@@ -1,8 +1,10 @@
 let AudioPlayer = require('./audioplayer');
+let Renderers = require('./renderers/index');
 window.AudioPlayer = AudioPlayer.AudioPlayer;
 
-// let player = AudioPlayer('player', 'file.mp3');
 let player = new AudioPlayer.AudioPlayer('player', 'file.mp3');
+let render = new Renderers.ProgressbarRenderer(player.element, player.player);
+player.setRenderer(render);
 
 let button = document.getElementById('play-button');
 button.onclick = function(ev) {

@@ -7,9 +7,14 @@ export class ProgressbarRenderer extends BaseRenderer {
         console.log(root.dir);
         this.progElement = root.appendChild(document.createElement('progress'));
         this.progElement.max = 1000;
+        
+        this.audioRef.ontimeupdate = ev => {
+            this.progress = this.audioRef.currentTime / this.audioRef.duration;
+        }
     }
     render(ms: number): void {
-        this.progElement.value = this.progress * 1000;
+        if(Number.isFinite(this.progress))
+            this.progElement.value = this.progress * 1000;
     }
 
     dispose(): void {
