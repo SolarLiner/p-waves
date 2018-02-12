@@ -1,0 +1,26 @@
+{
+  "name": "songside-audio-player",
+  "version": "0.1.0",
+  "description": "Audio player that conceals sources",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "keywords": [
+    "audio"
+  ],
+  "author": "SolarLiner",
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "@types/chai": "^4.1.2",
+    "@types/mocha": "^2.2.48",
+    "chai": "^4.1.2",
+    "eslint": "^4.17.0",
+    "mocha": "^5.0.0",
+    "ts-loader": "^3.5.0",
+    "tslint": "^5.9.1",
+    "typescript": "^2.7.1",
+    "webpack": "^3.11.0",
+    "webpack-dev-server": "^2.11.1"
+  }
+}
