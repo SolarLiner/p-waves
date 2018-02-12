@@ -1,13 +1,15 @@
 export interface IRenderer {
     animationFrameReference: number;
     render(ms: number): void;
+    dispose();
 }
 
 export abstract class BaseRenderer implements IRenderer {
     public progress: number;
     animationFrameReference: number;
 
-    constructor(private root: HTMLElement, private audioRef: HTMLAudioElement) { }
+    constructor(protected root: HTMLElement, protected audioRef: HTMLAudioElement) { }
 
     abstract render(ms: number): void;
+    abstract dispose(): void;
 }
