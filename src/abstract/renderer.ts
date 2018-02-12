@@ -3,9 +3,11 @@ export interface IRenderer {
     render(ms: number): void;
 }
 
-export abstract class BaseProgress implements IRenderer {
+export abstract class BaseRenderer implements IRenderer {
     public progress: number;
     animationFrameReference: number;
+
+    constructor(private root: HTMLElement, private audioRef: HTMLAudioElement) { }
 
     abstract render(ms: number): void;
 }
