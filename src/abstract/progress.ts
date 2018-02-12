@@ -1,9 +1,8 @@
 import { IRenderer } from "./renderer";
 
 export abstract class BaseProgress implements IRenderer {
+    public progress: number;
     animationFrameReference: number;
-    
-    render(ms: number): void {
-        throw new Error("Method not implemented.");
-    }
+
+    abstract render(ms: number): void;
 }

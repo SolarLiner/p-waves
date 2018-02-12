@@ -4,7 +4,8 @@
   "description": "Audio player that conceals sources",
   "main": "index.js",
   "scripts": {
-    "test": "mocha"
+    "start": "webpack-dev-server",
+    "build": "webpack"
   },
   "keywords": [
     "audio"
@@ -16,6 +17,7 @@
     "@types/mocha": "^2.2.48",
     "chai": "^4.1.2",
     "eslint": "^4.17.0",
+    "ify-loader": "^1.1.0",
     "mocha": "^5.0.0",
     "ts-loader": "^3.5.0",
     "tslint": "^5.9.1",
