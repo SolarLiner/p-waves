@@ -11,4 +11,8 @@ export class ProgressbarRenderer extends BaseRenderer {
     render(ms: number): void {
         this.progElement.value = this.progress * 1000;
     }
+
+    dispose(): void {
+        this.progElement.remove();
+    }
 }
