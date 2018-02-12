@@ -6,8 +6,8 @@ let player = new AudioPlayer.AudioPlayer('player', 'file.mp3');
 
 let button = document.getElementById('play-button');
 button.onclick = function(ev) {
-    button.innerText = player.paused? 'Play' : 'Pause';
-    if(!player.paused)
+    button.innerText = player.paused? 'Pause' : 'Play';
+    if(player.paused)
         player.play();
     else player.pause();
 }
