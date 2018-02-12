@@ -1,0 +1,14 @@
+{
+    "typeAcquisition": {
+        "enable": true
+    },
+    "compilerOptions": {
+        "lib": [
+            "es6",
+            "dom"
+        ],
+        "target": "es5",
+        "inlineSourceMap": true,
+        "outDir": "./dist/"
+    }
+}
