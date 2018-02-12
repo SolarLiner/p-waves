@@ -1,4 +1,5 @@
 let path = require('path');
+let webpack = require('webpack');
 
 module.exports = {
     entry: './src/index.js',
@@ -14,5 +15,6 @@ module.exports = {
         rules: [
             { test: /\.ts$/, use: 'ts-loader' }
         ]
-    }
+    },
+    plugins: []
 }

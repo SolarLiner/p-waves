@@ -1,4 +1,4 @@
-let AudioPlayer = require('./module').AudioPlayer;
+let AudioPlayer = require('./audioplayer');
 
 let player = new AudioPlayer('player', 'file.mp3');
 

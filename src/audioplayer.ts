@@ -1,4 +1,4 @@
-export class AudioPlayer {
+export default class AudioPlayer {
     private player: HTMLAudioElement;
     private element: HTMLElement;
 
