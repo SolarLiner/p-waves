@@ -1,5 +1,6 @@
 export interface IRenderer {
     animationFrameReference: number;
+    progress: number;
     render(ms: number): void;
     dispose();
 }
