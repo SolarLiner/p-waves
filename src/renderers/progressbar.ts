@@ -4,7 +4,6 @@ export class ProgressbarRenderer extends BaseRenderer {
     private progElement: HTMLProgressElement;
     constructor(root: HTMLElement, audioRef: HTMLAudioElement) {
         super(root, audioRef);
-        console.log(root.dir);
         this.progElement = root.appendChild(document.createElement('progress'));
         this.progElement.max = 1000;
         
