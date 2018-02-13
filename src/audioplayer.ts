@@ -11,7 +11,7 @@ export class AudioPlayer {
     constructor(file: string, renderer?: IRenderer) {
         this.player = new Audio(file);
 
-        this.renderer = renderer;
+        this.setRenderer(renderer);
     }
 
     public setRenderer(renderer: IRenderer) {
