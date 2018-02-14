@@ -14,6 +14,14 @@ export class AudioPlayer {
         this.setRenderer(renderer);
     }
 
+    public getPlayer() {
+        return this.player;
+    }
+
+    public getRenderer() {
+        return this.renderer;
+    }
+
     public setRenderer(renderer: IRenderer) {
         if(renderer == this.renderer)
             return;
