@@ -2,7 +2,8 @@ let path = require('path');
 let webpack = require('webpack');
 
 module.exports = {
-    entry: './src/index.js',
+    context: path.resolve(__dirname, 'src'),
+    entry: './index.js',
     devtool: 'source-map',
     devServer: {
         contentBase: './public'
