@@ -1,10 +1,11 @@
 import { BaseRenderer } from "../abstract/renderer";
+import { AudioPlayer } from "../audioplayer";
 
 export class PlayPauseButtonRenderer extends BaseRenderer {
     buttonElement: HTMLAnchorElement;
 
-    constructor(root: HTMLElement, audioRef: HTMLAudioElement) {
-        super(root, audioRef);
+    constructor(root: HTMLElement, playerRef: AudioPlayer) {
+        super(root, playerRef);
 
         this.setRoot(root);
     }
@@ -19,13 +20,13 @@ export class PlayPauseButtonRenderer extends BaseRenderer {
         this.buttonElement.classList.add('btn', 'btn-primary');
         this.buttonElement.innerText = 'Play';
         this.buttonElement.onclick = (ev) => {
-            if (this.audioRef.paused) {
+            if (this.playerRef.paused) {
                 this.buttonElement.innerText = 'Pause';
-                this.audioRef.play();
+                this.playerRef.play();
             }
             else {
                 this.buttonElement.innerText = 'Play';
-                this.audioRef.pause();
+                this.playerRef.pause();
             }
         };
     }

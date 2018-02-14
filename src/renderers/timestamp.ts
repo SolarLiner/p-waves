@@ -1,22 +1,20 @@
 import { BaseRenderer } from "../abstract/renderer";
+import { AudioPlayer } from "../audioplayer";
 
 export class TimestampRenderer extends BaseRenderer {
     span: HTMLSpanElement;
+    player: HTMLAudioElement;
 
-    constructor(root: HTMLElement, audioRef: HTMLAudioElement) {
-        super(root, audioRef);
+    constructor(root: HTMLElement, plyerRef: AudioPlayer) {
+        super(root, plyerRef);
+        this.player = this.playerRef.getPlayer();
+        this.player.ontimeupdate = (ev) => {
+            let timestamp = this.secondsToTimestamp(this.player.currentTime);
+            let duration = this.secondsToTimestamp(this.player.duration);
+            this.span.innerHTML = `<b>${timestamp.minutes}:${timestamp.seconds}</b> ${duration.minutes}:${duration.seconds}`;
+        };
 
         this.setRoot(root);
-    }
-
-    render(ms: number): void {
-        let timestamp = this.secondsToTimestamp(this.audioRef.currentTime);
-        let duration = this.secondsToTimestamp(this.audioRef.duration);
-
-        this.span.innerHTML = `<b>${timestamp.minutes}:${timestamp.seconds}</b> ${duration.minutes}:${duration.seconds}`;
-    }
-    dispose(): void {
-        this.root.innerText = "";
     }
 
     public setRoot(newRoot: HTMLElement) {
@@ -24,6 +22,11 @@ export class TimestampRenderer extends BaseRenderer {
             newRoot.appendChild(this.span);
         else
             this.span = newRoot.appendChild(document.createElement('span'));
+    }
+
+    render(ms: number): void { }
+    dispose(): void {
+        this.root.innerText = "";
     }
 
     private secondsToTimestamp(seconds: number) {
