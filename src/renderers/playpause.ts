@@ -31,6 +31,7 @@ export class PlayPauseButtonRenderer extends BaseRenderer {
         };
     }
 
+    timechange(ev: Event) { }
     render(ms: number): void { }
     dispose(): void {
         this.buttonElement.remove();

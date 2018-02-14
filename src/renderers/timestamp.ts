@@ -24,6 +24,10 @@ export class TimestampRenderer extends BaseRenderer {
             this.span = newRoot.appendChild(document.createElement('span'));
     }
 
+    timechange(ev: Event) {
+        
+    }
+
     render(ms: number): void { }
     dispose(): void {
         this.root.innerText = "";

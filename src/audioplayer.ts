@@ -27,10 +27,12 @@ export class AudioPlayer {
             return;
         if(!this.renderer) {
             this.renderer = renderer;
+            this.player.ontimeupdate = this.renderer.timechange;
             return;
         }
         this.renderer.dispose();
         this.renderer = renderer;
+        this.player.ontimeupdate = this.renderer.timechange;
     }
 
     public play() {

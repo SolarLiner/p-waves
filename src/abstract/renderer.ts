@@ -3,6 +3,7 @@ import { AudioPlayer } from "../audioplayer";
 export interface IRenderer {
     animationFrameReference: number;
     progress: number;
+    timechange(ev: Event): void;
     render(ms: number): void;
     dispose();
 }
@@ -17,7 +18,8 @@ export abstract class BaseRenderer implements IRenderer {
         return this.root;
     }
 
-    abstract setRoot(newRoot: HTMLElement);
+    abstract timechange(ev: Event): void;
+    abstract setRoot(newRoot: HTMLElement): void;
     abstract render(ms: number): void;
     abstract dispose(): void;
 }

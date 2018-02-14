@@ -22,6 +22,10 @@ export class ProgressbarRenderer extends BaseRenderer {
         this.progElement.max = 1000;
     }
 
+    timechange(ev: Event) {
+        console.log(ev);
+    }
+
     render(ms: number): void {
         if(Number.isFinite(this.progress))
             this.progElement.value = this.progress * 1000;
