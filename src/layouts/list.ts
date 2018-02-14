@@ -1,18 +1,20 @@
 import { BaseRenderer } from "../abstract/renderer";
 
 export class BootstrapGridRendererGroup extends BaseRenderer {
-    private renderers: BaseRenderer[]
 
-    constructor(root: HTMLElement, audio: HTMLAudioElement, renderers: BaseRenderer[]) {
+    constructor(root: HTMLElement, audio: HTMLAudioElement, private renderers: BaseRenderer[]) {
         super(root, audio);
+
+        this.setRoot(root);
+    }
+
+    public setRoot(root: HTMLElement) {
         root.classList.add('row');
-        this.renderers = renderers.map(renderer => {
-            let subroot = root.appendChild(document.createElement('div'))
+        this.renderers.forEach(renderer => {
+            let subroot = root.appendChild(document.createElement('div'));
             subroot.className = 'col';
             renderer.setRoot(subroot);
-            return renderer;
         });
-        console.log(this.renderers.map(value => value.getRoot()));
     }
 
     render(ms: number): void {
