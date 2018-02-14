@@ -31,10 +31,8 @@ export class PlayPauseButtonRenderer extends BaseRenderer {
         };
     }
 
-    render(ms: number): void {
-        throw new Error("Method not implemented.");
-    }
+    render(ms: number): void { }
     dispose(): void {
-        throw new Error("Method not implemented.");
+        this.buttonElement.remove();
     }
 }
