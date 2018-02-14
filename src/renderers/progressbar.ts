@@ -11,8 +11,10 @@ export class ProgressbarRenderer extends BaseRenderer {
         }
     }
     public setRoot(root: HTMLElement) {
-        if(this.progElement)
-            this.progElement.remove();
+        if(this.progElement) {
+            root.appendChild(this.progElement);
+            return;
+        }
 
         this.progElement = root.appendChild(document.createElement('progress'));
         this.progElement.max = 1000;
