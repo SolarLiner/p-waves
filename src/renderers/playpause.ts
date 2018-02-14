@@ -10,7 +10,13 @@ export class PlayPauseButtonRenderer extends BaseRenderer {
     }
 
     public setRoot(root: HTMLElement) {
+        if(this.buttonElement) {
+            root.appendChild(this.buttonElement);
+            return;
+        }
+
         this.buttonElement = root.appendChild(document.createElement('a'));
+        this.buttonElement.classList.add('btn', 'btn-primary');
         this.buttonElement.innerText = 'Play';
         this.buttonElement.onclick = (ev) => {
             if (this.audioRef.paused) {
