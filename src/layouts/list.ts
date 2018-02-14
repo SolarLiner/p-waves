@@ -1,9 +1,10 @@
 import { BaseRenderer } from "../abstract/renderer";
+import { AudioPlayer } from "../audioplayer";
 
 export class BootstrapGridRendererGroup extends BaseRenderer {
 
-    constructor(root: HTMLElement, audio: HTMLAudioElement, private renderers: BaseRenderer[]) {
-        super(root, audio);
+    constructor(root: HTMLElement, playerRef: AudioPlayer, private renderers: BaseRenderer[]) {
+        super(root, playerRef);
 
         this.setRoot(root);
     }

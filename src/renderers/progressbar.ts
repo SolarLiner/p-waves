@@ -1,13 +1,15 @@
 import { BaseRenderer } from "../abstract/renderer";
+import { AudioPlayer } from "../audioplayer";
 
 export class ProgressbarRenderer extends BaseRenderer {
     private progElement: HTMLProgressElement;
-    constructor(root: HTMLElement, audioRef: HTMLAudioElement) {
-        super(root, audioRef);
+    constructor(root: HTMLElement, playerRef: AudioPlayer) {
+        super(root, playerRef);
         this.setRoot(root);
         
-        this.audioRef.ontimeupdate = ev => {
-            this.progress = this.audioRef.currentTime / this.audioRef.duration;
+        let player = playerRef.getPlayer();
+        player.ontimeupdate = ev => {
+            this.progress = player.currentTime / player.duration;
         }
     }
     public setRoot(root: HTMLElement) {
