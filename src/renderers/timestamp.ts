@@ -1,6 +1,13 @@
 import { BaseRenderer } from "../abstract/renderer";
 
 export class TimestampRenderer extends BaseRenderer {
+    span: HTMLSpanElement;
+
+    constructor(root: HTMLElement, audioRef: HTMLAudioElement) {
+        super(root, audioRef);
+
+        this.setRoot(root);
+    }
 
     render(ms: number): void {
         let timestamp = this.secondsToTimestamp(this.audioRef.currentTime);
@@ -10,6 +17,13 @@ export class TimestampRenderer extends BaseRenderer {
     }
     dispose(): void {
         this.root.innerText = "";
+    }
+
+    public setRoot(newRoot: HTMLElement) {
+        if(this.span)
+            newRoot.appendChild(this.span);
+        else
+            this.span = newRoot.appendChild(document.createElement('span'));
     }
 
     private secondsToTimestamp(seconds: number) {

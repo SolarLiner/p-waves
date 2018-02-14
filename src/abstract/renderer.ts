@@ -11,11 +11,11 @@ export abstract class BaseRenderer implements IRenderer {
 
     constructor(protected root: HTMLElement, protected audioRef: HTMLAudioElement) { }
 
-    public setRoot(newRoot: HTMLElement) {
-        newRoot.innerHTML = this.root.innerHTML;
-        this.root = newRoot;
+    public getRoot() {
+        return this.root;
     }
 
+    abstract setRoot(newRoot: HTMLElement);
     abstract render(ms: number): void;
     abstract dispose(): void;
 }

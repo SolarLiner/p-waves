@@ -9,8 +9,10 @@ export class BootstrapGridRendererGroup extends BaseRenderer {
         this.renderers = renderers.map(renderer => {
             let subroot = root.appendChild(document.createElement('div'))
             subroot.className = 'col';
-            return renderer.constructor(subroot, audio);
+            renderer.setRoot(subroot);
+            return renderer;
         });
+        console.log(this.renderers.map(value => value.getRoot()));
     }
 
     render(ms: number): void {
