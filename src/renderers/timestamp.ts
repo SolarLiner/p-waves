@@ -13,7 +13,7 @@ export class TimestampRenderer extends BaseRenderer {
         let timestamp = this.secondsToTimestamp(this.audioRef.currentTime);
         let duration = this.secondsToTimestamp(this.audioRef.duration);
 
-        this.root.innerHTML = `<b>${timestamp.minutes}:${timestamp.seconds}</b> ${duration.minutes}:${duration.seconds}`;
+        this.span.innerHTML = `<b>${timestamp.minutes}:${timestamp.seconds}</b> ${duration.minutes}:${duration.seconds}`;
     }
     dispose(): void {
         this.root.innerText = "";
