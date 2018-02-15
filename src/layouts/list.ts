@@ -28,7 +28,10 @@ export class BootstrapGridRendererGroup extends BaseRenderer {
     }
 
     render(ms: number): void {
-        this.renderers.forEach(value => value.render(ms));
+        this.renderers.forEach(value => {
+            value.animationFrameReference = this.animationFrameReference;
+            value.render(ms);
+        });
     }
     dispose(): void {
         Promise.all(this.renderers.map(value => value.dispose()))

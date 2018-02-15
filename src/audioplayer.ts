@@ -32,7 +32,11 @@ export class AudioPlayer {
         }
         this.renderer.dispose();
         this.renderer = renderer;
-        this.player.ontimeupdate = this.renderer.timechange;
+        this.player.ontimeupdate = ev => {
+            console.log('[AudioPlayer.Player] Time update', ev);
+            if(this.renderer)
+                this.renderer.timechange(ev);
+        }
     }
 
     public play() {
