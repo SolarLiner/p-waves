@@ -3,7 +3,7 @@ let webpack = require('webpack');
 
 module.exports = {
     context: path.resolve(__dirname, 'src'),
-    entry: './index.js',
+    entry: './module.js',
     devtool: 'source-map',
     devServer: {
         contentBase: './public'
