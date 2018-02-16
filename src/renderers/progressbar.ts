@@ -6,12 +6,8 @@ export class ProgressbarRenderer extends BaseRenderer {
     constructor(root: HTMLElement, playerRef: AudioPlayer) {
         super(root, playerRef);
         this.setRoot(root);
-        
-        let player = playerRef.getPlayer();
-        player.ontimeupdate = ev => {
-            this.progress = player.currentTime / player.duration;
-        }
     }
+
     public setRoot(root: HTMLElement) {
         if(this.progElement) {
             root.appendChild(this.progElement);
@@ -23,13 +19,12 @@ export class ProgressbarRenderer extends BaseRenderer {
     }
 
     timechange(ev: Event) {
-        console.log(ev);
+        let player = this.playerRef.getPlayer()
+        this.progress = player.currentTime / player.duration;
+        this.progElement.value = this.progress * 1000;
     }
 
-    render(ms: number): void {
-        if(Number.isFinite(this.progress))
-            this.progElement.value = this.progress * 1000;
-    }
+    render(ms: number): void { }
 
     dispose(): void {
         this.progElement.remove();

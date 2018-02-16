@@ -25,17 +25,13 @@ export class AudioPlayer {
     public setRenderer(renderer: IRenderer) {
         if(renderer == this.renderer)
             return;
-        if(!this.renderer) {
-            this.renderer = renderer;
-            this.player.ontimeupdate = this.renderer.timechange;
-            return;
-        }
-        this.renderer.dispose();
+        if(this.renderer)
+            this.renderer.dispose();
         this.renderer = renderer;
         this.player.ontimeupdate = ev => {
-            console.log('[AudioPlayer.Player] Time update', ev);
+
             if(this.renderer)
-                this.renderer.timechange(ev);
+                this.renderer.timechange.call(this.renderer, ev);
         }
     }
 

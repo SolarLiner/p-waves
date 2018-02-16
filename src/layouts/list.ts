@@ -19,9 +19,7 @@ export class BootstrapGridRendererGroup extends BaseRenderer {
     }
 
     timechange(ev: Event) {
-        if(!this.renderers)
-            console.log('No renderers');
-        else
+        if(this.renderers)
             this.renderers.forEach(value => {
                 value.timechange(ev);
             });
