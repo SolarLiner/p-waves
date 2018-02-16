@@ -3,18 +3,12 @@ import { AudioPlayer } from "../audioplayer";
 
 export class TimestampRenderer extends BaseRenderer {
     span: HTMLSpanElement;
-    player: HTMLAudioElement;
 
-    constructor(root: HTMLElement, plyerRef: AudioPlayer) {
-        super(root, plyerRef);
-        this.player = this.playerRef.getPlayer();
-        this.player.ontimeupdate = (ev) => {
-            let timestamp = this.secondsToTimestamp(this.player.currentTime);
-            let duration = this.secondsToTimestamp(this.player.duration);
-            this.span.innerHTML = `<b>${timestamp.minutes}:${timestamp.seconds}</b> ${duration.minutes}:${duration.seconds}`;
-        };
+    constructor(root: HTMLElement, playerRef: AudioPlayer) {
+        super(root, playerRef);
 
         this.setRoot(root);
+        this.timechange(new Event('none'));
     }
 
     public setRoot(newRoot: HTMLElement) {
@@ -25,7 +19,10 @@ export class TimestampRenderer extends BaseRenderer {
     }
 
     timechange(ev: Event) {
-        
+        let player = this.playerRef.getPlayer();
+        let timestamp = this.secondsToTimestamp(player.currentTime);
+        let duration = this.secondsToTimestamp(player.duration);
+        this.span.innerHTML = `<b>${timestamp.minutes}:${timestamp.seconds}</b> ${duration.minutes}:${duration.seconds}`;
     }
 
     render(ms: number): void { }
