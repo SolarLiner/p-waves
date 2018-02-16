@@ -11,7 +11,16 @@
 </head>
 
 <body>
-    <div id="player"></div>
+    <section class="section">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-3">Audio player:</div>
+                <div class="col-sm-9">
+                    <div id="player"></div>
+                </div>
+            </div>
+        </div>
+    </section>
     <script src="player.js"></script>
     <script>
     let player = new AudioPlayer.Player('file.mp3');
@@ -19,7 +28,6 @@
 
     let renderers = [
         new AudioPlayer.Renderers.PlayPauseButtonRenderer(root, player),
-        new AudioPlayer.Renderers.ProgressbarRenderer(root, player),
         new AudioPlayer.Renderers.TimestampRenderer(root, player)
     ];
 

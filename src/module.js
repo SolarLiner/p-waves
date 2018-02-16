@@ -1,6 +1,6 @@
-let AudioPlayer = require('./audioplayer');
-let Renderers = require('./renderers/index');
-let Layouts = require('./layouts/index');
+var AudioPlayer = require('./audioplayer');
+var Renderers = require('./renderers/index');
+var Layouts = require('./layouts/index');
 
 window.AudioPlayer = {
     Player: AudioPlayer.AudioPlayer,

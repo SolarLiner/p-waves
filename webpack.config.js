@@ -20,5 +20,8 @@ module.exports = {
     resolve: {
         extensions: ['.ts', '.js']
     },
-    plugins: []
+    plugins: [
+        new webpack.optimize.AggressiveMergingPlugin(),
+        new webpack.optimize.UglifyJsPlugin({sourceMap: true})
+    ]
 }
