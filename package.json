@@ -1,8 +1,8 @@
 {
-  "name": "songside-audio-player",
+  "name": "p-waves",
   "version": "0.1.0",
-  "description": "Audio player that conceals sources",
-  "main": "index.js",
+  "description": "Ground-breaking component-based audio player for the web",
+  "main": "./dist/player.js",
   "scripts": {
     "start": "webpack-dev-server",
     "build": "webpack"
@@ -11,7 +11,7 @@
     "audio"
   ],
   "author": "SolarLiner",
-  "license": "UNLICENSED",
+  "license": "MIT",
   "devDependencies": {
     "@types/chai": "^4.1.2",
     "@types/mocha": "^2.2.48",
