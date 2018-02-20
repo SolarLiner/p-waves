@@ -98,7 +98,7 @@ export abstract class BaseRenderer implements IRenderer {
     /**
      * Sets the root element to the current one. 
      * 
-     * Implementation notes: It is better to dynamically change the root element of your DOM,
+     * **Implementation notes**: It is better to dynamically change the root element of your DOM,
      * than to recreate everything. Ideally this function is only called on creation, but browser 
      * logic can have dynamic swapping (ie. for demos).
      * 
