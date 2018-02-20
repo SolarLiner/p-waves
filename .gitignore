@@ -66,3 +66,5 @@ typings/
 # public test folder
 /public/*.js
 /public/*.js.map
+/src/jsdoc
+/doc
