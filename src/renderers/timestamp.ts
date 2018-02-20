@@ -1,7 +1,21 @@
 import { BaseRenderer } from "../abstract/renderer";
 import { AudioPlayer } from "../audioplayer";
-
+/**
+ * Example implementation of elapsed time over total time indicator.
+ * 
+ * For now, you can skip rendering by providing an empty function, but function calls are wasted. 
+ * In future versions, control flags can be added to prevent rendering.
+ * @export
+ * @class TimestampRenderer
+ * @extends {BaseRenderer}
+ */
 export class TimestampRenderer extends BaseRenderer {
+    /**
+     * Span element in which the text is rendered.
+     * 
+     * @type {HTMLSpanElement}
+     * @memberof TimestampRenderer
+     */
     span: HTMLSpanElement;
 
     constructor(root: HTMLElement, playerRef: AudioPlayer) {
