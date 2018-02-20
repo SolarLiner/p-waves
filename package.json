@@ -7,7 +7,7 @@
     "start": "webpack-dev-server",
     "build": "webpack",
     "doc": "npm run doc:gen && http-server ./doc",
-    "doc:gen": "ts2jsdoc . && jsdoc /src/jsdoc/ -d doc"
+    "doc:gen": "ts2jsdoc . ; jsdoc ./src/jsdoc/ -d ./doc; true"
   },
   "keywords": [
     "audio"
