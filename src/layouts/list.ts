@@ -1,9 +1,24 @@
 import { BaseRenderer } from "../abstract/renderer";
 import { AudioPlayer } from "../audioplayer";
-
+/**
+ * An example "Renderer group" using Boostrap grids.
+ * 
+ * A renderer group is a "meta-renderer" that relays events to several renderers. This is useful
+ * for breaking-up components in a complex renderer.
+ * 
+ * @export
+ * @class BootstrapGridRendererGroup
+ * @extends {BaseRenderer}
+ */
 export class BootstrapGridRendererGroup extends BaseRenderer {
-
-    constructor(root: HTMLElement, playerRef: AudioPlayer, private renderers: BaseRenderer[]) {
+/**
+ * Creates an instance of BootstrapGridRendererGroup.
+ * @param {HTMLElement} root Root element.
+ * @param {AudioPlayer} playerRef Reference of the `AudioPlayer` that renders it.
+ * @param {BaseRenderer[]} renderers List of renderers to be managed by this renderer group.
+ * @memberof BootstrapGridRendererGroup
+ */
+constructor(root: HTMLElement, playerRef: AudioPlayer, private renderers: BaseRenderer[]) {
         super(root, playerRef);
 
         this.setRoot(root);
