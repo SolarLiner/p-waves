@@ -10,7 +10,7 @@ import { AudioPlayer } from "../audioplayer";
  * their websites. Example renderers are provided as well as a "Bootstrap Grid" renderer group
  * that bundles several renderers into one.
  * 
- * Typically implementing this interface directly isn't the way to go - check out the `BaseRenderer`
+ * Typically implementing this interface directly isn't the way to go - check out the `{@link BaseRenderer}`
  * abstract class.
  * 
  * @export
@@ -58,10 +58,10 @@ export interface IRenderer {
 /**
  * Base class on which to implement renderers.
  * 
- * `BaseRenderer` implements `IRenderer` directly and adds abstract utility functions on top to aid with
+ * `BaseRenderer` implements `{@link IRenderer}` directly and adds abstract utility functions on top to aid with
  * implementing a renderer.
  * 
- * See `IRenderer` for the philosophy of a renderer.
+ * See `{@link IRenderer}` for the philosophy of a renderer.
  * @export
  * @abstract
  * @class BaseRenderer
@@ -73,8 +73,8 @@ export abstract class BaseRenderer implements IRenderer {
     /**
      * Creates an instance of BaseRenderer.
      * @param {HTMLElement} root Root element. All DOM operations must be done within this element,
-     * and all added elements must be removed in `dispose`.
-     * @param {AudioPlayer} playerRef AudioPlayer that uses this renderer to render.
+     * and all added elements must be removed in `{@link BaseRenderer.dispose}`.
+     * @param {AudioPlayer} playerRef {@link AudioPlayer} that uses this renderer to render.
      * @memberof BaseRenderer
      */
     constructor(protected root: HTMLElement, protected playerRef: AudioPlayer) { }

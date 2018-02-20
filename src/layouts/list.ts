@@ -14,7 +14,7 @@ export class BootstrapGridRendererGroup extends BaseRenderer {
 /**
  * Creates an instance of BootstrapGridRendererGroup.
  * @param {HTMLElement} root Root element.
- * @param {AudioPlayer} playerRef Reference of the `AudioPlayer` that renders it.
+ * @param {AudioPlayer} playerRef Reference of the `{@link AudioPlayer}` that renders it.
  * @param {BaseRenderer[]} renderers List of renderers to be managed by this renderer group.
  * @memberof BootstrapGridRendererGroup
  */

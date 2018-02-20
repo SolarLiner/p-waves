@@ -3,7 +3,7 @@ import { AudioPlayer } from "../audioplayer";
 /**
  * Example implementation of a Play/Pause button.
  * 
- * In the future, `IRendeer` may include a `playing` and `pausing` events, but for now the text 
+ * In the future, `{@link IRenderer}` may include a `playing` and `pausing` events, but for now the text 
  * can be changed by handling the onclick at the same time as the play/pause logic.
  * 
  * For now, you can skip rendering by providing an empty function, but function calls are wasted. 
