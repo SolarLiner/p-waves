@@ -10,5 +10,6 @@
         "target": "es5",
         "sourceMap": true,
         "outDir": "./dist/"
-    }
+    },
+    "jsdoc": "src/jsdoc/"
 }

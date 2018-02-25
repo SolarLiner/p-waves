@@ -64,5 +64,6 @@ typings/
 /dist
 
 # public test folder
-/public/*.js
-/public/*.js.map
+/public
+/src/jsdoc
+/doc
