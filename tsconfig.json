@@ -1,15 +1,16 @@
 {
-    "typeAcquisition": {
-        "enable": true
-    },
-    "compilerOptions": {
-        "lib": [
-            "es6",
-            "dom"
-        ],
-        "target": "es5",
-        "sourceMap": true,
-        "outDir": "./dist/"
-    },
-    "jsdoc": "src/jsdoc/"
+  "typeAcquisition": {
+    "enable": true
+  },
+  "compilerOptions": {
+    "lib": ["es6", "dom", "esnext.asynciterable"],
+    "target": "es6",
+    "moduleResolution": "node",
+    "sourceMap": true,
+    "outDir": "./distTS/",
+    "jsx": "react",
+    "jsxFactory": "h"
+  },
+  "jsdoc": "src/jsdoc/",
+  "include": ["src/**/*.ts", "src/**/*.tsx"]
 }
