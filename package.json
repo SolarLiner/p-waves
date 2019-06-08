@@ -1,19 +1,33 @@
 {
   "name": "p-waves",
   "version": "0.1.0",
+  "private": true,
   "description": "Ground-breaking component-based audio player for the web",
   "source": "src/module.js",
   "main": "dist/pwaves.js",
-  "module": "dist/pwaves.mjs",
+  "module": "dist/pwaves.module.js",
   "unpkg": "dist/pwaves.umd.js",
   "scripts": {
     "dev": "parcel public/index.html",
-    "build": "microbundle build",
-    "doc": "npm run doc:gen && http-server ./doc",
-    "doc:gen": "ts2jsdoc . ; jsdoc ./src/jsdoc/ -d ./doc; true"
+    "bootstrap": "lerna bootstrap --use-workspaces",
+    "build": "lerna exec --parallel -- yarn build",
+    "doc": "npm run doc:gen && http-server ./docs",
+    "doc:gen": "ts2jsdoc . ; jsdoc ./src/jsdoc/ -d ./docs; true"
   },
   "keywords": [
-    "audio"
+    "audio",
+    "player",
+    "html",
+    "web",
+    "preact"
+  ],
+  "files": [
+    "src",
+    "dist",
+    "preact/dist"
+  ],
+  "workspaces": [
+    "packages/*"
   ],
   "author": "SolarLiner",
   "license": "MIT",
@@ -26,13 +40,18 @@
     "http-server": "^0.11.1",
     "ify-loader": "^1.1.0",
     "jsdoc": "^3.5.5",
+    "lerna": "^3.14.1",
     "microbundle": "^0.11.0",
     "mocha": "^6.1.4",
+    "npm-run-all": "^4.1.5",
     "parcel": "^1.12.3",
     "parcel-plugin-url-loader": "^1.3.1",
     "preact": "^10.0.0-beta.2",
     "ts-jsdoc": "^3.0.0",
     "tslint": "^5.9.1",
     "typescript": "^3.5.1"
+  },
+  "optionalDependencies": {
+    "preact": "^10.0.0-beta.2"
   }
 }

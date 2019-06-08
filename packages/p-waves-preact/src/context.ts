@@ -1,8 +1,8 @@
 import { useContext, useState } from "preact/hooks";
 
-import { AudioPlayer, Track } from "../audioplayer";
+import { AudioPlayer, Track } from "../../p-waves/src/audioplayer";
 import { Context, createContext } from "preact";
-import { observe } from "../event";
+import { observe } from "../../p-waves/src/event";
 
 let _context: Context<AudioPlayer>;
 export function getContext() {

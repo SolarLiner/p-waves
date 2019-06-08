@@ -1,0 +1,14 @@
+{
+  "name": "pwaves-preact",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Preact support for the audio player",
+  "main": "dist/pwaves-preact.js",
+  "module": "dist/pwaves-preact.module.js",
+  "umd:main": "dist/pwaves-preact.umd.js",
+  "source": "./index/tsx",
+  "peerDependencies": {
+    "preact": "^10.0.0.beta-2",
+    "p-waves": "0.1.0"
+  }
+}
