@@ -31,7 +31,7 @@
   },
   "scripts": {
     "build": "microbundle build",
-    "prepack": "micrubondle build",
+    "prepack": "microbundle build",
     "test": "echo \"Error: run tests from root\" && exit 1"
   },
   "bugs": {
