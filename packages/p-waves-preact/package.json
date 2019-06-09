@@ -27,6 +27,8 @@
     "url": "git+https://github.com/SolarLiner/p-waves.git"
   },
   "scripts": {
+    "build": "microbundle build",
+    "prepack": "microbundle build",
     "test": "echo \"Error: run tests from root\" && exit 1"
   },
   "bugs": {

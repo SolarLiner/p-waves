@@ -16,6 +16,7 @@
   "main": "dist/pwaves.js",
   "module": "dist/pwaves.module.js",
   "umd:main": "dist/pwaves.umd.js",
+  "types": "dist/module.d.ts",
   "source": "src/module.ts",
   "files": [
     "src",
@@ -30,6 +31,7 @@
   },
   "scripts": {
     "build": "microbundle build",
+    "prepack": "micrubundle build",
     "test": "echo \"Error: run tests from root\" && exit 1"
   },
   "bugs": {

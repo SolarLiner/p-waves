@@ -10,9 +10,10 @@
   "scripts": {
     "dev": "parcel public/index.html",
     "bootstrap": "lerna bootstrap --use-workspaces",
-    "build": "lerna exec --parallel -- yarn build",
+    "build": "lerna run --parallel build",
     "doc": "npm run doc:gen && http-server ./docs",
-    "doc:gen": "ts2jsdoc . ; jsdoc ./src/jsdoc/ -d ./docs; true"
+    "doc:gen": "ts2jsdoc . ; jsdoc ./src/jsdoc/ -d ./docs; true",
+    "prepare": "lerna bootstrap"
   },
   "keywords": [
     "audio",

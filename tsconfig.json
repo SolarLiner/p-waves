@@ -11,6 +11,4 @@
     "jsx": "react",
     "jsxFactory": "h"
   },
-  "jsdoc": "src/jsdoc/",
-  "include": ["src/**/*.ts", "src/**/*.tsx"]
 }
