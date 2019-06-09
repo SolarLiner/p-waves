@@ -1,6 +1,6 @@
 {
   "name": "p-waves",
-  "version": "0.1.0",
+  "version": "0.1.1-alpha.0",
   "description": "p-waves is an audio player for HTML5, made for use with UI libraries/frameworks.",
   "keywords": [
     "audio",

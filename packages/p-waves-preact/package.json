@@ -1,6 +1,6 @@
 {
   "name": "p-waves-preact",
-  "version": "0.1.0",
+  "version": "0.1.1-alpha.0",
   "description": "Preact context and custom hook into p-waves.",
   "keywords": [
     "preact",
@@ -35,7 +35,7 @@
     "url": "https://github.com/SolarLiner/p-waves/issues"
   },
   "dependencies": {
-    "p-waves": "^0.1.0"
+    "p-waves": "^0.1.1-alpha.0"
   },
   "peerDependencies": {
     "preact": "^10.0.0.beta-2"
