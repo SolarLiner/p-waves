@@ -11,10 +11,11 @@
   "author": "Nathan Graule <solarliner@gmail;com>",
   "homepage": "https://github.com/SolarLiner/p-waves#readme",
   "license": "MIT",
-  "main": "lib/pwaves-preact.js",
+  "main": "dist/pwaves-preact.js",
   "module": "dist/pwaves-preact.module.js",
   "umd:main": "dist/pwaves-preact.umd.js",
   "source": "src/index.tsx",
+  "types": "dist/index.d.ts",
   "files": [
     "src",
     "dist"
@@ -28,6 +29,7 @@
   },
   "scripts": {
     "build": "microbundle build",
+    "dts": "tsc -p . --emitDeclarationOnly",
     "prepack": "microbundle build",
     "test": "echo \"Error: run tests from root\" && exit 1"
   },

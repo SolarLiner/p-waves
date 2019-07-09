@@ -68,3 +68,6 @@ dist
 # public test folder
 /public
 /src/jsdoc
+
+# Transpiled lib folders
+lib

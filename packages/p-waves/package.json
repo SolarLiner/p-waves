@@ -31,6 +31,7 @@
   },
   "scripts": {
     "build": "microbundle build",
+    "dts": "tsc -p . --emitDeclarationOnly",
     "prepack": "microbundle build",
     "test": "echo \"Error: run tests from root\" && exit 1"
   },

@@ -10,7 +10,9 @@
   "scripts": {
     "dev": "parcel public/index.html",
     "bootstrap": "lerna bootstrap --use-workspaces",
-    "build": "lerna run --parallel build",
+    "build:js": "lerna run --parallel build",
+    "build:dts": "lerna run dts",
+    "build": "yarn build:js && yarn build:dts",
     "doc": "npm run doc:gen && http-server ./docs",
     "doc:gen": "ts2jsdoc . ; jsdoc ./src/jsdoc/ -d ./docs; true",
     "prepare": "lerna bootstrap"

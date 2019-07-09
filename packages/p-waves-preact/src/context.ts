@@ -1,8 +1,8 @@
 import { useContext, useState } from "preact/hooks";
 
-import { AudioPlayer, Track } from "p-waves/src/audioplayer";
+import { AudioPlayer } from "p-waves";
 import { Context, createContext } from "preact";
-import { observe } from "p-waves/src/event";
+import { Event } from "p-waves";
 
 let _context: Context<AudioPlayer>;
 export function getContext() {
@@ -16,7 +16,7 @@ export function useAudioPlayer() {
   const [{ player, revision }, setState] = useState({ player: new AudioPlayer(), revision: 0 });
   console.log(`[preact/context] state revision`, revision);
   if (revision === 0)
-    observe(player).subscribe(ev => {
+    Event.observe(player).subscribe(ev => {
       console.log(`[AudioPlayer] ${ev.type}:`, ev.value);
       setState({ player, revision: revision + 1 });
     });

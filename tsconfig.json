@@ -6,9 +6,10 @@
     "lib": ["es6", "dom", "esnext.asynciterable"],
     "target": "es6",
     "moduleResolution": "node",
+    "declaration": true,
     "sourceMap": true,
     "outDir": "./distTS/",
     "jsx": "react",
     "jsxFactory": "h"
-  },
+  }
 }
