@@ -14,10 +14,8 @@ export function getContext() {
 
 export function useAudioPlayer() {
   const [{ player, revision }, setState] = useState({ player: new AudioPlayer(), revision: 0 });
-  console.log(`[preact/context] state revision`, revision);
   if (revision === 0)
     Event.observe(player).subscribe(ev => {
-      console.log(`[AudioPlayer] ${ev.type}:`, ev.value);
       setState({ player, revision: revision + 1 });
     });
   return player;
